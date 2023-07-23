@@ -39,9 +39,11 @@
             let stepTime = Math.abs(Math.floor(duration / range));
             let timer = setInterval(function() {
                 current += increment;
-                element.textContent = current.toLocaleString();
                 if (current == end) {
                     clearInterval(timer);
+                    element.textContent = end.toLocaleString() + '.';
+                } else {
+                    element.textContent = current.toLocaleString();
                 }
             }, stepTime);
         }
