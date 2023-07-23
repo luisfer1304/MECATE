@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Statistics</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li strong {
+            font-weight: bold;
+            font-size: 30px;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <ul>
+        <li><strong>94</strong> mil alumnos</li>
+        <li><strong>26</strong> campus</li>
+        <li><strong>10</strong> mil profesores</li>
+        <li><strong>500</strong> investigadores</li>
+        <li><strong>300</strong> mil egresados</li>
+    </ul>
+
+    <script>
+        // Function to animate the numbers
+        function animateValue(element, start, end, duration) {
+            let range = end - start;
+            let current = start;
+            let increment = end > start ? 1 : -1;
+            let stepTime = Math.abs(Math.floor(duration / range));
+            let timer = setInterval(function() {
+                current += increment;
+                element.textContent = current.toLocaleString();
+                if (current == end) {
+                    clearInterval(timer);
+                }
+            }, stepTime);
+        }
+
+        // Function to start the animation when the element is in the viewport
+        function startAnimationWhenVisible() {
+            const strongElements = document.querySelectorAll('li strong');
+            const windowHeight = window.innerHeight;
+
+            function checkPosition() {
+                for (let i = 0; i < strongElements.length; i++) {
+                    let strongElement = strongElements[i];
+                    let positionFromTop = strongElement.getBoundingClientRect().top;
+
+                    if (positionFromTop - windowHeight <= 0) {
+                        let finalValue = parseInt(strongElement.textContent, 10);
+                        animateValue(strongElement, 0, finalValue, 2000); // Set animation duration to 2 seconds
+                    }
+                }
+            }
+
+            window.addEventListener('scroll', checkPosition);
+            checkPosition();
+        }
+
+        startAnimationWhenVisible();
+    </script>
+</body>
+</html>
