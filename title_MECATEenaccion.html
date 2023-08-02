@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Title with Yellow Highlight</title>
+    <!-- Import Montserrat font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Define the styles for the title and animation */
+        .animated-title {
+            position: relative;
+            font-size: 30px;
+            font-weight: bold;
+            font-family: 'Gotham', sans-serif; /* Apply Montserrat font */
+            color: #1A1A1A;
+            overflow: hidden;
+        }
+
+        /* Define the styles for the highlight animation */
+        .highlight {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background-color: #F2DC10;
+            animation: highlightAnimation 2s linear forwards; /* Stop the animation at the end */
+            z-index: -1; /* Send the highlight behind the text */
+        }
+
+        /* Define the animation keyframes */
+        @keyframes highlightAnimation {
+            0% { width: 0; }
+            100% { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="animated-title">
+        <div class="highlight"></div>
+        MECATE en acción
+    </div>
+</body>
+</html>
