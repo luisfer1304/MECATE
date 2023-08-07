@@ -42,7 +42,7 @@
 		}
 
 		.background {
-			background-color: #FFD200;
+			background-color: #F2DC10;
 		}
 
 		.border {
@@ -60,17 +60,12 @@
 <body>
 
 	<nav class="navMenu  border background">
-		<a id="home" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-house"></i> MECATE23</a>
-		<a id="inbox" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-globe"></i> Programa Virtual</a>
-		<a id="week" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-location-dot"></i> Programa Presencial</a>
-		<a id="projects" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-book"></i> Manual de supervivencia</a>
-		<a id="tasks" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-heart"></i> Comunidad</a>
-
-
-
-
+		<a id="home" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-house"></i> MECATE</a>
+		<a id="virtual" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-globe"></i> Programa Virtual</a>
+		<!--<a id="presencial" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-location-dot"></i> Programa Presencial</a>-->
+		<a id="manual" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-book"></i> Manual de supervivencia</a>
+		<a id="comunidad" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-heart"></i> Comunidad</a>
 	</nav>
-
 
 	<script>
 
@@ -79,21 +74,21 @@
 			document.head.insertAdjacentHTML("beforeend", `<style>.navMenu a {display: block; text-align:left; margin:7px} i{width:15px; margin-right:5px} .navMenu{margin:3px}</style>`)
 		}
 
-
 		function navigate(id) {
 
 			if (id == 'home')
-				window.open("https://example.com", '_blank').focus();
+    			window.location.href = "https://www.notion.so/edgarbarrosotec/MECATE-d323e73ebf894efd9b916d3a2fc07dd1";
+
 			else if (id == "inbox")
 				window.open("https://example.com", '_blank').focus();
-			else if (id == "week")
+			else if (id == 'virtual')
+    			window.location.href = "https://www.notion.so/edgarbarrosotec/Programa-Virtual-5db5234add944cfeb21af58a5a16b0eb";
+			else if (id == "presencial")
 				window.open("https://example.com", '_blank').focus();
-			else if (id == "month")
-				window.open("https://example.com", '_blank').focus();
-			else if (id == "projects")
-				window.open("https://example.com", '_blank').focus();
-			else if (id == "business")
-				window.open("https://example.com", '_blank').focus();
+			else if (id == 'manual')
+    			window.location.href = "https://www.notion.so/edgarbarrosotec/Manual-de-supervivencia-938d140eb92145b9b927d48b338d5fd1";
+			else if (id == 'comunidad')
+    			window.location.href = "https://www.notion.so/edgarbarrosotec/Comunidad-3b91477deff24d0490285585b9e46152";
 			else if (id == "tasks")
 				window.open("https://example.com", '_blank').focus();
 			else if (id == "knowledge")
